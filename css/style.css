@@ -9,6 +9,8 @@ CSS TABLE OF CONTENTS
     #GLOBAL VARIBLES (Colors, fonts ,etc.)
     #GLOBAL COLORS
 
+# GLOBAL MEDIA (Making images responsive)
+
 --------------------------
 --------------------------
 --------------------------
@@ -112,4 +114,12 @@ CSS TABLE OF CONTENTS
             p {
                 max-width: 65ch;
                 text-wrap: pretty;
+            }
+
+/* GLOBAL MEDIA */
+
+            img {
+                /* MAKE ALL IMAGES SHRINK ON SMALL SCREENS */
+                max-width: 100%;
+                height: auto;
             }
