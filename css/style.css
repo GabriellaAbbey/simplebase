@@ -275,6 +275,12 @@ body {
     
  }
 
+
+ /* SeCTIONS */
+
+ section {
+    padding: var(--unit-large);
+ }
  /* SITE FOOTER */
  .site-footer {
     background-color: skyblue;
