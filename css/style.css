@@ -20,6 +20,7 @@ CSS TABLE OF CONTENTS
     # HEADER
         # LOGO
         # SITE NAV
+        # SITE HEADER ON TOP OF HERO
     # MAIN
         # SECTIONS
             # HERO
@@ -45,7 +46,7 @@ CSS TABLE OF CONTENTS
             --color-text-body: rgba(255, 255, 255, 0.8);
             --color-text-headings: rgb(255, 255, 255);
 
-            --color-body-background: rgb(0, 0, 0);
+            --color-body-background: rgb(86, 31, 133);
 
             --color-links: rgb(113, 97, 236);
             --color-links-dark:rgb(38, 32, 84);
@@ -300,80 +301,89 @@ CSS TABLE OF CONTENTS
 
 
 /* SITE HEADER */
-    .site-header {
-        background-color: var(--color-siteheader-background);
-        color: white;
-        /* puts header children side by side ONLARGE SCREENS */
-        @media (min-width: 768px) {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-       
+.site-header {
+    background-color: var(--color-siteheader-background);
+    
+    /* PUT ALL HEADER CHILDREN SIDE-BY-SIDE AND VERT CENTERED ON LARGE SCREENS */
+    @media (min-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-        /* add some padding */
-        padding: var(--unit-small);
+    /* ADD SOME GENERAL SPACING AROUND THE HEADER */
+    padding: var(--unit-small);
 
+    /* REMOVE LINK UNDERLINES IN HEADER */
+    a {
+        text-decoration: none;
+    }
 
-        /* RENDER HEADER ON TOP OF HERO */
-
-        @media (min-width: 768px) {
-            position: absolute;
-            width: 100%;
-        }
-      
-
-
-        /* REMOVE LINK COLORS AND UNDERLINE (TEXT-DECORATION) */
-        a {
-            color: var(--color-links-siteheader);
-            text-decoration: none;
-        }
-
-
-
-
+    /* SITE LOGO */
     .site-logo {
 
-        /* PUT SITE LOGO CHILDREN SIDE BY SIDE AND CENTERED */
-        display: grid;
-        grid-template-columns: auto auto;
-        align-items:center;
-        gap: var(--unit-small);
+        /* PUT SITE LOGO CHILDREN SIDE-BY-SIDE AND CENTER */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
 
-        /* REMOVING MARGINS */
+        /* REMOVE MARGINS AND RESIZE H1 INSIDE HEADER */
         h1 {
             font-size: 2em;
             margin: 0;
             text-wrap: nowrap;
         }
-    } 
 
-/* SITE NAV */
+    }
+
+    /* SITE-NAV */
     .site-nav {
+
         ul {
-            /* REMOVE MARGINS AND BULLLETS FROM LIST */
+            /* REMOVE MARGINS & BULLETS FROM LIST */
             margin: 0;
             padding: 0;
             list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
 
-            /* DISPLAY CHILDREN SIDE-BY-SIDE ON LARGE SCREENS */
-            @media (min-width: 768px) {
-                display: flex;
-            }
         }
-        /* MAKE SITE NAV LINKS LARGE LIKE BUTTONS */
-        /* ---This is good UI, Makes the buttons----
-        -----more clickable with larger padding---*/
+
+        /* MAKE SITE NAV LINKS BIG LIKE BUTTONS */
         a {
             display: block;
             padding: 1em;
-            
-
         }
 
     }
- } 
+
+}
+
+/* PLACE SITE HEADER ON TOP OF HERO ON LARGE SCREENS */
+.site-header.on-top-of-hero {
+
+    @media (min-width: 768px) {
+
+        /* RENDER HEADER ON TOP OF HERO */
+        position: absolute;
+        width: 100%;
+
+        /* SET SITE HEADER LINK COLOR ON LARGE SCREENS */
+        a {
+            color: var(--color-siteheader-links);
+        }
+
+        /* ADD MORE SPACE ON TOP FOR THE ABSOLUTE HEADER */
+        & + .site-main > .hero {
+            padding-top: calc(4em + var(--unit-large));
+        }
+
+    }
+
+}
+
 
  /* SITE MAIN */
  .site-main {
