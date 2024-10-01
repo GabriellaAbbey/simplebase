@@ -20,6 +20,7 @@ CSS TABLE OF CONTENTS
     # HEADER
         # LOGO
         # SITE NAV
+        # TOGGLE MENU
         # SITE HEADER ON TOP OF HERO
     # MAIN
         # SECTIONS
@@ -357,6 +358,46 @@ CSS TABLE OF CONTENTS
         a {
             display: block;
             padding: 1em;
+        }
+
+
+        /* TOGGLE MENU */
+
+        .site-menu-button {
+            display: none;
+        }
+
+        &.toggle-menu {
+            
+            display:flex;
+            flex-direction:row-reverse;
+
+            .site-menu-button {
+                display: block;
+            }
+
+            .site-menu { 
+                position: fixed;
+                top: 0;
+                right: 0;
+                background-color: rgba(255, 192, 203, 0.642);
+                width: 100%;
+                min-height: 100vh;
+            }
+
+            &[data-menustate="open"] {
+                
+                .site-menu {
+                    transform:translateX(0);
+                   
+                }
+            }
+            &[data-menustate="closed"] {
+                
+                .site-menu {
+                    transform: translateX(100%);
+                }
+            }
         }
 
     }

@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+
     <header class="site-header on-top-of-hero">
         <div class="site-logo">
             <a href="index.html">
@@ -18,14 +20,18 @@
             </a>
             <h1 class="hide-visuallyx"><a href="index.html">Simple Base</a></h1>
         </div>
-        <nav class="site-nav">
-            <ul>
+
+        <nav class="site-nav toggle-menu" data-menustate="closed">
+            <button class="site-menu-button">Menu</button>
+            <ul class="site-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="products.html">Products</a></li>
                 <li><a href="about.html">About</a></li>
             </ul>
         </nav>
     </header>
+
+
     <main class="site-main">
         <section class="hero">
             <div class="container">
@@ -124,5 +130,9 @@
             </div>
         </div>
     </footer>
+
+
+<!-- MAIN JS FILE-->
+    <script src="js/script.js"></script>
 </body>
 </html>
