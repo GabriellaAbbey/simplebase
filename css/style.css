@@ -77,6 +77,7 @@ CSS TABLE OF CONTENTS
             --unit-small: 1em;
             --unit-medium: 2em;
             --unit-large: 4em;
+            --gridgap: 2em;
 
 
  }
@@ -241,7 +242,8 @@ CSS TABLE OF CONTENTS
 
                 } 
                 .row > * {
-                    margin-bottom: 1em;
+                    margin-bottom: var(--gridgap);
+                    margin-top: var(--gridgap);
                 }
 
 
