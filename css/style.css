@@ -21,6 +21,7 @@ CSS TABLE OF CONTENTS
         # LOGO
         # SITE NAV
         # TOGGLE MENU
+        #NAV ICON + HAMBUGER
         # SITE HEADER ON TOP OF HERO
     # MAIN
         # SECTIONS
@@ -383,7 +384,6 @@ display: none;
 
 /* SET TOGGLE MENU COLORS */
 color: var(--color-togglemenu-text);
-background-color: var(--color-togglemenu-background);
 
 
 display: flex;
@@ -458,7 +458,7 @@ align-items: center;
     /* CHANGE COLORS TO TOGGLE MENU COLORS WHEN OPEN */
     --color-siteheader-links: var(--color-togglemenu-text);
 
-    /* SET MENU BUTTON TO FIXED WHEN MENU IS OPEN */
+    /* LOGO STAYS WHEN MENU IS OPEN< GET RID OF ME IF YOU DON'T WANT IT */
     .site-menu-button {
         position: fixed;
         z-index: 100;
@@ -469,9 +469,9 @@ align-items: center;
         transform: translateX(0);
     }
 
-    /* ANIMATE THE NAVICON / HAMBURGER ICON */
-    /* ADD SUPPORT FOR NAVICON/HAMBURGER ICON */
+    /* ANIMATE THE NAVICON + HAMBURGER ICON */
     .site-menu-button svg {
+       
         .simple-navicon-top {
             transform: translate(-21%, 25%) rotate(45deg);
         }
@@ -479,6 +479,7 @@ align-items: center;
             opacity: 0;
         }
         .simple-navicon-bottom {
+            /* OLD SCHOOL VERSION */
             transform: translate(-21%, -25%) rotate(-45deg);
         }
     }
@@ -626,3 +627,15 @@ justify-content: space-between;
             border-color: var(--color-links-hover);
         }
     }
+
+
+     /* --------------------------
+ ------ ANIMATION ---------
+ ---------------------------- */
+
+
+ /* ADD SUPPORT FOR SMOOOOOOOTH SCROLLIN */
+
+ html {
+    scroll-behavior: smooth;
+ }
