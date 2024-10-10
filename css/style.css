@@ -136,6 +136,10 @@ CSS TABLE OF CONTENTS
             }
 
         /* TYPOGRAPHIC SCALE */
+
+            .hero h1 {
+                font-size: 4em;
+            }
             h1 {
 
                 /* SET H1 FONT SIZE */
